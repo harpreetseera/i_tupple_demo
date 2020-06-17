@@ -29,312 +29,317 @@ class _HomeScreenState extends State<HomeScreen> {
         body: BlocBuilder(
             bloc: BlocProvider.of<HomeBloc>(context),
             builder: (context, state) => Column(
-                  children: <Widget>[
-                    Container(
-                      // height: screenheight * 0.12,
+                    children: <Widget>[
+                      Container(
+                        // height: screenheight * 0.12,
+                        decoration: BoxDecoration(
+            borderRadius: new BorderRadius.only(
+              bottomLeft: const Radius.circular(20.0),
+              bottomRight: const Radius.circular(20.0),
+            ),
+            gradient: new LinearGradient(
+              begin: Alignment(-1.0, -4.0),
+              end: Alignment(1, 4.0),
+              colors: [
+                Colors.orange,
+                Colors.red,
+                Colors.purple[600],
+              ],
+              stops: [0.0, 0.5, 0.9],
+            ),
+            color: Colors.orange,
+                        ),
+                        child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 4,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: new BorderRadius.only(
-                          bottomLeft: const Radius.circular(20.0),
-                          bottomRight: const Radius.circular(20.0),
-                        ),
-                        gradient: new LinearGradient(
-                          begin: Alignment(-1.0, -4.0),
-                          end: Alignment(1, 4.0),
-                          colors: [
-                            Colors.orange,
-                            Colors.red,
-                            Colors.purple[600],
-                          ],
-                          stops: [0.0, 0.5, 0.9],
-                        ),
-                        color: Colors.orange,
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(15)),
+                        color: Colors.white,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.fromLTRB(
+                            8.0, 12, 8, 12),
                         child: Row(
+                          mainAxisAlignment:
+                              MainAxisAlignment.start,
                           children: <Widget>[
-                            Expanded(
-                              flex: 4,
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    color: Colors.white,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        8.0, 12, 8, 12),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: <Widget>[
-                                        Icon(Icons.search, color: Colors.red),
-                                        Text("Search",
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                            )),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                  child: Row(
-                                children: <Widget>[
-                                  Expanded(
-                                      flex: 1,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Text("online",
-                                              textAlign: TextAlign.end,
-                                              style: TextStyle(
-                                                  color: Colors.white)),
-                                          Switch(
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            onChanged: (val) {},
-                                            value: true,
-                                            activeColor: Colors.orange,
-                                          )
-                                        ],
-                                      )),
-                                  Flexible(
-                                    // flex: 1,
-                                    child: Container(
-                                      width: 50,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                              "assets/roll.jpg",
-                                            ),
-                                            fit: BoxFit.cover),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        border: Border.all(
-                                          color: Colors.orange,
-                                          width: 1,
-                                        ),
-                                        // color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )),
-                            )
+                            Icon(Icons.search, color: Colors.red),
+                            Text("Search",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                )),
                           ],
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 16.0,
-                        right: 16,
-                      ),
-                      child: Column(
-                        children: <Widget>[
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(top: 16.0, bottom: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Expanded(
-                                  child: Stack(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            8, 16, 16, 8),
-                                        child: Container(
-                                           decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                                        color: Colors.orange,
-                                      ),
-                                          width: screenWidth * 0.25,
-                                          height: 100,
-                                          child: Center(
-                                            child: Text("All \nOrders",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                )),
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                          top: 0.0,
-                                          right: 0.0,
-                                          child: CircleAvatar(
-                                            radius: 14,
-                                            backgroundColor: Colors.white,
-                                            child: CircleAvatar(
-                                              radius: 10,
-                                              backgroundColor: Colors.orange,
-                                            ),
-                                          ))
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                     padding: const EdgeInsets.fromLTRB(
-                                            8, 16, 16, 8),
-                                    child: Container(
-                                        decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                                        color: Colors.purple,
-                                      ),
-                                      width: screenWidth * 0.25,
-                                      height: 100,
-                                      
-                                      child: Center(
-                                          child: handleResponsiveness(state)),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                     padding: const EdgeInsets.fromLTRB(
-                                            8, 16, 16, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                                         color: Colors.red,
-                                      ),
-                                      width: screenWidth * 0.25,
-                                      height: 100,
-                                     
-                                      child: Center(
-                                        child: Text("All \nCustomers",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            )),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(top: 16.0, bottom: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: new BorderRadius.all(
-                                          Radius.circular(20),
-                                        ),
-                                        color: Colors.orange,
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            16, 8, 16, 8),
-                                        child: Text(
-                                          "Ongoing",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: new BorderRadius.all(
-                                          Radius.circular(20),
-                                        ),
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                        ),
-                                        color: Colors.white,
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            16, 8, 16, 8),
-                                        child: Text(
-                                          "Tomorrow",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.orange,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: new BorderRadius.all(
-                                          Radius.circular(20),
-                                        ),
-                                        border: Border.all(
-                                          color: Colors.grey,
-                                        ),
-                                        color: Colors.white,
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            16, 8, 16, 8),
-                                        child: Text(
-                                          "History",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.orange,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                      child: Row(
+                    children: <Widget>[
+                      Expanded(
+                          flex: 1,
+                          child: Column(
+                            mainAxisAlignment:
+                                MainAxisAlignment.center,
                             children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(4.0,8,4,8),
-                                child: Icon(Icons.access_time, color: Colors.orange),
-                              ),
-                              Text(
-                                "Instant",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[700],
-                                  fontSize: 18,
-                                ),
+                              Text("online",
+                                  textAlign: TextAlign.end,
+                                  style: TextStyle(
+                                      color: Colors.white)),
+                              Switch(
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize
+                                        .shrinkWrap,
+                                onChanged: (val) {},
+                                value: true,
+                                activeColor: Colors.orange,
                               )
                             ],
+                          )),
+                      Flexible(
+                        // flex: 1,
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/roll.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(10)),
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 1,
+                            ),
+                            // color: Colors.white,
                           ),
-                          handleOrderData(state, context),
+                        ),
+                      ),
+                    ],
+                  )),
+                )
+              ],
+            ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+            left: 16.0,
+            right: 16,
+                        ),
+                        child: Column(
+            children: <Widget>[
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 16.0, bottom: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                8, 16, 16, 8),
+                            child: Container(
+                               decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.orange[800],
+                          ),
+                              width: screenWidth * 0.25,
+                              height: 100,
+                              child: Center(
+                                child: Text("All \nOrders",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    )),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                              top: 0.0,
+                              right: 0.0,
+                              child: CircleAvatar(
+                                radius: 14,
+                                backgroundColor: Colors.white,
+                                child: CircleAvatar(
+                                  radius: 10,
+                                  backgroundColor: Colors.orange[800],
+                                ),
+                              ))
                         ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                         padding: const EdgeInsets.fromLTRB(
+                                8, 16, 16, 8),
+                        child: Container(
+                            decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.purple,
+                          ),
+                          width: screenWidth * 0.25,
+                          height: 100,
+                          
+                          child: Center(
+                              child: handleResponsiveness(state)),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                         padding: const EdgeInsets.fromLTRB(
+                                8, 16, 16, 8),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                             color: Colors.red[900],
+                          ),
+                          width: screenWidth * 0.25,
+                          height: 100,
+                         
+                          child: Center(
+                            child: Text("All \nCustomers",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                )),
+                          ),
+                        ),
                       ),
                     )
                   ],
-                )),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 16.0, bottom: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: new BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            color: Colors.orange[800],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                16, 8, 16, 8),
+                            child: Text(
+                              "Ongoing",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: new BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                16, 8, 16, 8),
+                            child: Text(
+                              "Tomorrow",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.orange[800],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: new BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                16, 8, 16, 8),
+                            child: Text(
+                              "History",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.orange[800],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4.0,8,4,8),
+                    child: Icon(Icons.access_time, color: Colors.orange[800]),
+                  ),
+                  Text(
+                    "Instant",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[700],
+                      fontSize: 18,
+                    ),
+                  )
+                ],
+              ),
+              
+            ],
+                        ),
+                      ),
+                      Expanded(child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16,0,16,16),
+                        child: handleOrderData(state, context),
+                      )),
+                    ],
+
+                  )),
       ),
     );
   }
@@ -451,7 +456,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     if (state is OrderSuccessState) {
       orderData = Container(
-        height: MediaQuery.of(ctx).size.height * 0.4,
+        height: MediaQuery.of(ctx).size.height * 0.6,
         child: ListView.builder(
           physics: BouncingScrollPhysics(),
           itemCount: state.orderFetchResponse.data.orders.length,
