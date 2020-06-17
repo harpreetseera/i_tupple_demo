@@ -12,6 +12,8 @@ import 'package:itup/states/home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeRepository homeRepository;
   HomeBloc({@required this.homeRepository});
+  EarningDataResponse earningDataResponse;
+  OrderFetchResponse orderFetchResponse;
   @override
   HomeState get initialState => UnHomeState();
 
@@ -23,12 +25,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
         EarningDataResponse response = await homeRepository.getEarningData();
         if (response != null) {
-          yield EarningHideLoadingState();
+          earningDataResponse=response;
+          // yield EarningHideLoadingState();
           yield EarningSuccessState(
             earningDataResponse: response,
           );
         } else {
-          yield EarningHideLoadingState();
+          // yield EarningHideLoadingState();
           yield EarningFailureState(
               errorMessage: "Something went wrong.\nPlease try again");
         }
@@ -51,6 +54,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
         OrderFetchResponse response = await homeRepository.getOrderData();
         if (response != null) {
+          orderFetchResponse = response;
           yield OrderHideLoadingState();
           yield OrderSuccessState(
             orderFetchResponse: response,
